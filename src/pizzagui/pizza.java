@@ -313,6 +313,7 @@ public class Pizza extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rendelesActionPerformed
+        
         int ar=1000;
         String teszta="";
         String feltet="";
@@ -332,7 +333,10 @@ public class Pizza extends javax.swing.JFrame {
         }else{
             teszta+=vekonyb.getText();
         }
-        
+        String glutenkiir="";
+        if (glutenbox.isSelected()){
+                glutenkiir="Gluténmentes";
+        }
         
             if (sajt) {
                 feltet+="-";
@@ -380,7 +384,7 @@ public class Pizza extends javax.swing.JFrame {
             
             
         if ((sajt || bacon || hagyma || kukorica || kolbasz || paradicsom) && !telotext.getText().isEmpty()){
-            String uzenet = "Rendelt pizza: \n"+"Tésztája: "+teszta+" tészta \n"+"Kért feltétek :\n"+feltet+"Telefon : "+teloszamkiir+"\nPizza ára: "+ar+"Ft";
+            String uzenet = "Rendelt pizza: \n"+"Tésztája: "+teszta+ "\n"+glutenkiir +" tészta \n"+"Kért feltétek :\n"+feltet+"Telefon : "+teloszamkiir+"\nPizza ára: "+ar+"Ft";
             JOptionPane.showMessageDialog(null, uzenet, cim, 1);
          
         }else if((sajt || bacon || hagyma || kukorica || kolbasz || paradicsom) && telotext.getText().isEmpty()){
@@ -569,6 +573,8 @@ public class Pizza extends javax.swing.JFrame {
     private javax.swing.JTextField telotext;
     private javax.swing.JRadioButton vekonyb;
     // End of variables declaration//GEN-END:variables
+
+    
 
     
     
