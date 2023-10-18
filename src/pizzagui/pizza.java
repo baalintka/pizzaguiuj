@@ -383,10 +383,12 @@ public class Pizza extends javax.swing.JFrame {
          
             
             
-        if ((sajt || bacon || hagyma || kukorica || kolbasz || paradicsom) && !telotext.getText().isEmpty()){
-            String uzenet = "Rendelt pizza: \n"+"Tésztája: "+teszta+ "\n"+glutenkiir +" tészta \n"+"Kért feltétek :\n"+feltet+"Telefon : "+teloszamkiir+"\nPizza ára: "+ar+"Ft";
-            JOptionPane.showMessageDialog(null, uzenet, cim, 1);
-         
+        if ((sajt || bacon || hagyma || kukorica || kolbasz || paradicsom) && !telotext.getText().isEmpty() && telotext.getText().length()!=11){
+                JOptionPane.showMessageDialog(rootPane, "Nemjó formátum, adjon meg telefonszámot!", "", 2);
+        }else if((sajt || bacon || hagyma || kukorica || kolbasz || paradicsom) && !telotext.getText().isEmpty() && telotext.getText().length()==11){
+                String uzenet = "Rendelt pizza: \n"+"Tésztája: "+teszta+ "\n"+glutenkiir +" tészta \n"+"Kért feltétek :\n"+feltet+"Telefon : "+teloszamkiir+"\nPizza ára: "+ar+"Ft";
+                JOptionPane.showMessageDialog(null, uzenet, cim, 1);
+        
         }else if((sajt || bacon || hagyma || kukorica || kolbasz || paradicsom) && telotext.getText().isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "Nem adott meg telefonszámot!", "", 2);
         }
